@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Article list</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -73,7 +73,7 @@
         <!-- Navbar -->
 
         <!-- Sidebar -->
-        <div style="z-index: 1030"  id="sidebar" class="sidebar-fixed position-fixed">
+        <div style="z-index: 1030" id="sidebar" class="sidebar-fixed position-fixed">
 
             <a class="logo-wrapper waves-effect">
                 <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
@@ -83,13 +83,17 @@
                 <a class="list-group-item active waves-effect d-flex justify-content-around align-items-center"
                     data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
                     aria-controls="collapseExample">
-                    <span><i class="fas fa-chart-pie mr-3"></i>Dashboard </span>
+                    <span><i class="fas fa-chart-pie mr-3"></i>Article </span>
                     <span><i class="fas fa-chevron-right"></i></span>
                 </a>
                 <div class="collapse" id="collapseExample">
                     <ul class="list-group">
-                        <li class="list-group-item">Create product</li>
-                        <li class="list-group-item">Product list</li>
+                        <li class="list-group-item">
+                            <a href="dashboard.html">Article List</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="add-article.html">Add new article</a>
+                        </li>
                     </ul>
                 </div>
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
@@ -225,6 +229,9 @@
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Thumbnail:</label>
                                             <textarea class="form-control info-artile" name="thumbnail"></textarea>
+                                        </div>
+                                        <div class="form-group" name="image">
+
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Author:</label>

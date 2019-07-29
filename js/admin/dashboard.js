@@ -124,7 +124,14 @@ $('#exampleModal').on('show.bs.modal', function (event) {
             modal.find('.modal-body input[name$="updatedAtMLS"]').val(metaData.data.updatedAtMLS)
             modal.find('.modal-body input[name$="status"]').val(status)
             modal.find('.modal-body input[name$="categoryId"]').val(metaData.data.categoryId)
-
+            var img = "";
+            metaData.data.thumbnail.forEach(element => {
+                img += ` 
+                <div class="col-4" style="display: inline-block;">
+                    <img src="${element}" class="img-fluid" name="image">
+                </div>`;
+                modal.find('.modal-body div[name$="image"]').html(img);
+            });
             modal.find('.modal-footer button[name$="submit"]').click(function () {
                 change(link);
             })
@@ -175,8 +182,8 @@ function change(linkArticle) {
                 Swal.fire('Update success!')
                 setInterval(function () {
                     location.reload()
-                },1000)
-                
+                }, 1000)
+
 
             } else
                 Swal.fire('Update fail!')
