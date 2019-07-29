@@ -1,0 +1,1 @@
+var baseUrl = "https://beta-dot-assignmentcrawler.appspot.com";
