@@ -42,8 +42,8 @@
     });
 
     function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val() == '') {
+        if($(input).attr('type') == 'username' || $(input).attr('name') == 'username') {
+            if($(input).val().length < 9 || $(input).val() == '') {
                 return false;
             }
         }
