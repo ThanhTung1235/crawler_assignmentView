@@ -94,6 +94,7 @@ function addNews() {
         "updatedAtMLS": updatedAtMLS,
         "status": status
     }
+    
     var data = JSON.stringify(article);
     console.log("stringify :" + data);
     $.ajax({
