@@ -116,37 +116,35 @@
     <main class="pt-5 ">
         <div class="container-fluid mt-5">
 
-            <!-- Heading -->
-            <div class="card mb-4 wow fadeIn">
 
-                <!--Card content-->
-                <div class="card-body d-sm-flex justify-content-between">
-
-                    <h4 class="mb-2 mb-sm-0 pt-1">
-                        <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">Home Page</a>
-                        <span>/</span>
-                        <span>Dashboard</span>
-                    </h4>
-
-                    <form class="d-flex justify-content-center">
-                        <!-- Default input -->
-                        <input type="search" placeholder="Type your query" aria-label="Search" class="form-control">
-                        <button class="btn btn-primary btn-sm my-0 p" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-            <!-- Heading -->
 
             <div class="card">
 
                 <!--Card content-->
                 <div class="loader mt-3 mb-3" id="loader"></div>
                 <div class="card-body overflow-auto" id="data-table">
+                    <div class="d-flex justify-content-start mb-3">
+                            <form class="d-flex w-25" name="status-sort">
+                            <!-- Default input -->
+                            <select class="form-control" id="status-sopt">
+                                <option value="-5">-- Status --</option>
+                                <option value="0">Pending</option>
+                                <option value="1">Active</option>
+                            </select>
+                            <button class="btn btn-primary btn-sm my-0 p" name="submit" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                        <form class="d-flex w-25" name="category-sort">
+                            <!-- Default input -->
+                            <select class="form-control" id="category-sopt">
+
+                            </select>
+                            <button class="btn btn-primary btn-sm my-0 p" name="submit" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
 
                     <!-- Table  -->
                     <table class="table table-hover">
@@ -156,12 +154,9 @@
                                 <th>#</th>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>Content</th>
                                 <th>Thumbnail</th>
                                 <th>CreatedAt</th>
                                 <th>UpdatedAt</th>
-                                <th>Link</th>
-                                <th>Author</th>
                                 <th>Status</th>
                                 <th>Action</th>
 
@@ -334,7 +329,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!--  -->
     <script type="text/javascript" src="../js/pagination.js"></script>
-    <!-- <script type="text/javascript" src="../js/admin/dashboard.js"></script> -->
+    <script type="text/javascript" src="../js/admin/dashboard.js"></script>
     <!-- Initializations -->
 </body>
 
