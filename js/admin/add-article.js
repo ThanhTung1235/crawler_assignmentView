@@ -104,7 +104,7 @@ function addNews() {
             if (data.status == 200) {
                 Swal.fire('Create success!')
                 setInterval(function () {
-                    location.reload()
+                    window.location.href = "dashboard.html";
                 }, 1000)
 
 
