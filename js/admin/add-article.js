@@ -79,54 +79,56 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
 })
 function addNews() {
-    var link = $('.modal-body input[name$="link"]').val();
-    var title = $('.modal-body textarea[name$="title"]').val();
-    var description = $('.modal-body textarea[name$="description"]').val();
-    var content = $('.modal-body textarea[name$="content"]').val();
-    var thumbnail = $('.modal-body textarea[name$="thumbnail"]').val();
-    var author = $('.modal-body input[name$="author"]').val();
-    var sourceId = $('.modal-body input[name$="sourceId"]').val();
-    var createdAtMLS = $('.modal-body input[name$="createdAtMLS"]').val();
-    var updatedAtMLS = $('.modal-body input[name$="updatedAtMLS"]').val();
-    var status = $('.modal-body select[name$="status-opt"]').val();
-    var categoryId = $('.modal-body input[name$="categoryId"]').val();
+    if ($('#edit-article').valid()) {
+        var link = $('.modal-body input[name$="link"]').val();
+        var title = $('.modal-body textarea[name$="title"]').val();
+        var description = $('.modal-body textarea[name$="description"]').val();
+        var content = $('.modal-body textarea[name$="content"]').val();
+        var thumbnail = $('.modal-body textarea[name$="thumbnail"]').val();
+        var author = $('.modal-body input[name$="author"]').val();
+        var sourceId = $('.modal-body input[name$="sourceId"]').val();
+        var createdAtMLS = $('.modal-body input[name$="createdAtMLS"]').val();
+        var updatedAtMLS = $('.modal-body input[name$="updatedAtMLS"]').val();
+        var status = $('.modal-body select[name$="status-opt"]').val();
+        var categoryId = $('.modal-body input[name$="categoryId"]').val();
 
-    var article = {
-        "link": link,
-        "categoryId": categoryId,
-        "title": title,
-        "content": content,
-        "thumbnail": [thumbnail],
-        "author": author,
-        "description": description,
-        "sourceId": sourceId,
-        "createdAtMLS": createdAtMLS,
-        "updatedAtMLS": updatedAtMLS,
-        "status": status
-    }
-
-    var data = JSON.stringify(article);
-    console.log("stringify :" + data);
-    $.ajax({
-        "url": urlArticle,
-        "method": "POST",
-        "data": data,
-        "success": function (data) {
-            if (data.status == 200) {
-                Swal.fire('Create success!')
-                setInterval(function () {
-                    window.location.href = "dashboard.html";
-                }, 1000)
-
-
-            } else
-                Swal.fire('Create fail!')
-        },
-        headers: {
-            "Authorization": "Bear eefbd5f1811c454abfa0f66e3d5d8e1f",
-        },
-        "error": function () {
-            Swal.fire('Update fail!')
+        var article = {
+            "link": link,
+            "categoryId": categoryId,
+            "title": title,
+            "content": content,
+            "thumbnail": [thumbnail],
+            "author": author,
+            "description": description,
+            "sourceId": sourceId,
+            "createdAtMLS": createdAtMLS,
+            "updatedAtMLS": updatedAtMLS,
+            "status": status
         }
-    })
+
+        var data = JSON.stringify(article);
+        console.log("stringify :" + data);
+        $.ajax({
+            "url": urlArticle,
+            "method": "POST",
+            "data": data,
+            "success": function (data) {
+                if (data.status == 200) {
+                    Swal.fire('Create success!')
+                    setInterval(function () {
+                        window.location.href = "dashboard.html";
+                    }, 1000)
+
+
+                } else
+                    Swal.fire('Create fail!')
+            },
+            headers: {
+                "Authorization": "Bear eefbd5f1811c454abfa0f66e3d5d8e1f",
+            },
+            "error": function () {
+                Swal.fire('Update fail!')
+            }
+        })
+    }
 }
