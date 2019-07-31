@@ -10,11 +10,47 @@
 <body>
     <div id="data-container"></div>
     <div id="pagination-container"></div>
+    <form class="cmxform" id="commentForm" method="get" action="">
+        <fieldset>
+            <legend>Please provide your name, email address (won't be published) and a comment</legend>
+            <p>
+                <label for="cname">Name (required, at least 2 characters)</label>
+                <input id="cname" name="name" minlength="2" type="text" required>
+            </p>
+            <p>
+                <label for="cemail">E-Mail (required)</label>
+                <input id="cemail" type="email" name="email" required>
+            </p>
+            <p>
+                <label for="curl">URL (optional)</label>
+                <input id="curl" type="url" name="url">
+            </p>
+            <p>
+                <label for="ccomment">Your comment (required)</label>
+                <textarea id="ccomment" name="comment" required></textarea>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+
 </body>
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/pagination.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
 <script>
-
+    $("#commentForm").validate({
+        rules: {
+            name: {
+                required: true,
+                minLength: 2,
+                maxLength: 10
+            }
+        }, messages: {
+            name: "asdsa"
+        }
+    });
     var obj = [
         {
             "link": "http://cafebiz.vn/10-lenh-cam-ky-quac-nhung-ai-cung-phai-tuan-thu-khi-du-lich-nuoc-ngoai-dung-coi-thuong-vi-ban-co-the-phai-tra-gia-cuc-dat-20190727083112109.chn",

@@ -39,7 +39,12 @@
   /* Safari */
   animation: spin 2s linear infinite;
 }
-
+.expan-element{
+  justify-content: space-between
+}
+.error{
+  color: red;
+}
 /* Safari */
 
 @-webkit-keyframes spin {

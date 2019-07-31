@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Article list</title>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="../css/mdb.min.css" rel="stylesheet">
+    <link href="../../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="../css/style.min.css" rel="stylesheet">
+    <link href="../../css/style.min.css" rel="stylesheet">
     <!--  -->
-    <link href="../css/admin/dashboard.css" rel="stylesheet">
-    <link href="../css/pagination.css" rel="stylesheet">
+    <link href="../../css/admin/dashboard.css" rel="stylesheet">
+    <link href="../../css/pagination.css" rel="stylesheet">
 </head>
 
 <body class="grey lighten-3">
@@ -89,10 +88,10 @@
                 <div class="collapse" id="collapseExample">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="dashboard.html">Article List</a>
+                            <a href="../dashboard.html">Article List</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="add-article.html">Add new article</a>
+                            <a href="../add-article.html">Add new article</a>
                         </li>
                     </ul>
                 </div>
@@ -105,10 +104,10 @@
                 <div class="collapse" id="collapseSource">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="source/source-list.html">Source List</a>
+                            <a href="source-list.html">Source List</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="source/add-source.html">Add new Source</a>
+                            <a href="add-source.html">Add new Source</a>
                         </li>
                     </ul>
                 </div>
@@ -133,44 +132,22 @@
                 <!--Card content-->
                 <div class="loader mt-3 mb-3" id="loader"></div>
                 <div class="card-body overflow-auto" id="data-table">
-                    <div class="d-flex justify-content-start mb-3">
-                        <form class="d-flex w-25" name="status-sort">
-                            <!-- Default input -->
-                            <select class="form-control" id="status-sopt">
-                                <option value="-5">-- Status --</option>
-                                <option value="0">Pending</option>
-                                <option value="1">Active</option>
-                            </select>
-                            <button class="btn btn-primary btn-sm my-0 p" name="submit" type="button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </form>
-                        <form class="d-flex w-25" name="category-sort">
-                            <!-- Default input -->
-                            <select class="form-control" id="category-sopt">
-
-                            </select>
-                            <button class="btn btn-primary btn-sm my-0 p" name="submit" type="button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </form>
-                    </div>
-
+                    <h5>Source list</h5>
                     <!-- Table  -->
                     <table class="table table-hover">
                         <!-- Table head -->
                         <thead class="blue-grey lighten-4">
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Thumbnail</th>
+                                <th>Url</th>
+                                <th>titleSelector</th>
+                                <th>thumbnailSelector</th>
+                                <th>linkSelector</th>
+                                <th>descriptionSelector</th>
+                                <th>contentSelector</th>
+                                <th>authorSelector</th>
                                 <th>CreatedAt</th>
                                 <th>UpdatedAt</th>
-                                <th>Status</th>
-                                <th>Action</th>
-
-
                             </tr>
                         </thead>
                         <!-- Table head -->
@@ -178,28 +155,28 @@
                         <!-- Table body -->
                         <tbody id="data-container">
                             <!-- <tr>
-                                <th scope="row">1</th>
-                                <td id="title">-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td><img class="thumbnail" src="" alt=""></td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>
-                                    <button class="btn-primary btn-sm" name="info">
-                                        <i class="fas fa-info"></i>
-                                    </button>
-                                    <button class="btn-primary btn-sm" name="edit">
-                                        <i class="far fa-edit"></i>
-                                    </button>
-                                    <button class="btn-danger btn-sm" name="delete">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </td>
-                            </tr> -->
+                        <th scope="row">1</th>
+                        <td id="title">-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><img class="thumbnail" src="" alt=""></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+                            <button class="btn-primary btn-sm" name="info">
+                                <i class="fas fa-info"></i>
+                            </button>
+                            <button class="btn-primary btn-sm" name="edit">
+                                <i class="far fa-edit"></i>
+                            </button>
+                            <button class="btn-danger btn-sm" name="delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr> -->
 
                         </tbody>
 
@@ -328,18 +305,16 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
-    <!-- Sweet alert JavaScript -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../../js/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../../js/popper.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!--  -->
-    <script type="text/javascript" src="../js/pagination.js"></script>
-    <script type="text/javascript" src="../js/admin/dashboard.js"></script>
+
+    <script type="text/javascript" src="../../js/pagination.js"></script>
+    <script type="text/javascript" src="../../js/source/source-list.js"></script>
     <!-- Initializations -->
 </body>
 
