@@ -91,37 +91,37 @@
 
                 <div class="list-group list-group-flush">
                     <a class="list-group-item text-dark waves-effect d-flex align-items-center expan-element"
-                    data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                    aria-controls="collapseExample">
-                    <span><i class="fas fa-chart-pie mr-3"></i>Article </span>
-                    <span><i class="fas fa-chevron-right"></i></span>
-                </a>
-                <div class="collapse" id="collapseExample">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="dashboard.html">Article List</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="add-article.html">Add new article</a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="list-group-item text-dark waves-effect d-flex align-items-center expan-element"
-                    data-toggle="collapse" href="#collapseSource" role="button" aria-expanded="false"
-                    aria-controls="collapseSource">
-                    <span><i class="fas fa-list-alt mr-3"></i>Source </span>
-                    <span><i class="fas fa-chevron-right"></i></span>
-                </a>
-                <div class="collapse" id="collapseSource">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="source/source-list.html">Source List</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="source/add-source.html">Add new Source</a>
-                        </li>
-                    </ul>
-                </div>
+                        data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        <span><i class="fas fa-chart-pie mr-3"></i>Article </span>
+                        <span><i class="fas fa-chevron-right"></i></span>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="dashboard.html">Article List</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="add-article.html">Add new article</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="list-group-item text-dark waves-effect d-flex align-items-center expan-element"
+                        data-toggle="collapse" href="#collapseSource" role="button" aria-expanded="false"
+                        aria-controls="collapseSource">
+                        <span><i class="fas fa-list-alt mr-3"></i>Source </span>
+                        <span><i class="fas fa-chevron-right"></i></span>
+                    </a>
+                    <div class="collapse" id="collapseSource">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="source/source-list.html">Source List</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="source/add-source.html">Add new Source</a>
+                            </li>
+                        </ul>
+                    </div>
                     <a href="#" class="list-group-item list-group-item-action waves-effect">
                         <i class="fas fa-table mr-3"></i>Tables</a>
                     <a href="#" class="list-group-item list-group-item-action waves-effect">
@@ -143,19 +143,19 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-6">
-                                <form name="edit-article">
+                                <form name="edit-article" id="add-article">
                                     <h3>Add new article</h3>
                                     <div class="form-group">
                                         <label for="link" class="col-form-label">Link:</label>
-                                        <input type="text" class="form-control" required name="link">
+                                        <input type="url" class="form-control" required name="link">
                                     </div>
                                     <div class="form-group">
                                         <label for="link" class="col-form-label">Title selector:</label>
-                                        <input class="form-control" required name="title">
+                                        <input class="form-control" type="text" required name="title">
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Content selector:</label>
-                                        <input class="form-control" required name="content">
+                                        <input class="form-control" type="text" required name="content">
                                     </div>
                                     <div class="form-row">
                                         <div class="col-6">
@@ -175,15 +175,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Thumbnail selector:</label>
-                                        <input class="form-control" required name="thumbnail">
+                                        <input class="form-control" type="text" required name="thumbnail">
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Author selector:</label>
-                                        <input class="form-control" name="author">
+                                        <input class="form-control" type="text" required name="author">
                                     </div>
                                     <div class="form-group">
                                         <label for="message-text" class="col-form-label">Description selector:</label>
-                                        <input class="form-control" required name="description">
+                                        <input class="form-control" type="text" required name="description">
                                     </div>
 
                                     <div class="form-group mt-3 float-right">
@@ -217,32 +217,37 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form name="edit-article">
+                                        <form name="edit-article" id="edit-article">
                                             <div class="form-group">
                                                 <label for="link" class="col-form-label">Link:</label>
-                                                <input type="text" class="form-control" required name="link">
+                                                <input type="url" class="form-control" required name="link" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="link" class="col-form-label">Title:</label>
-                                                <textarea class="form-control info-artile" required name="title"></textarea>
+                                                <textarea class="form-control info-artile" required
+                                                    name="title"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="message-text" class="col-form-label">Content:</label>
-                                                <textarea class="form-control text-content" required name="content"></textarea>
+                                                <textarea class="form-control text-content" required
+                                                    name="content"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="message-text" class="col-form-label">Thumbnail:</label>
-                                                <textarea class="form-control info-artile" required name="thumbnail"></textarea>
+                                                <textarea class="form-control info-artile" required
+                                                    name="thumbnail"></textarea>
                                             </div>
                                             <div class="form-group" name="image">
 
                                             </div>
                                             <div class="form-group">
-                                                <label for="message-text" required class="col-form-label">Author:</label>
-                                                <input class="form-control"  name="author">
+                                                <label for="message-text" required
+                                                    class="col-form-label">Author:</label>
+                                                <input class="form-control" name="author">
                                             </div>
                                             <div class="form-group">
-                                                <label for="message-text" required class="col-form-label">Description:</label>
+                                                <label for="message-text" required
+                                                    class="col-form-label">Description:</label>
                                                 <textarea class="form-control info-artile"
                                                     name="description"></textarea>
                                             </div>
@@ -341,7 +346,8 @@
         <!--  -->
         <script type="text/javascript" src="../js/pagination.js"></script>
         <script type="text/javascript" src="../js/admin/add-article.js"></script>
-        <script type="text/javascript" src="../js/validator.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../js/additional-methods.min.js"></script>
         <!-- Initializations -->
     </body>
 
