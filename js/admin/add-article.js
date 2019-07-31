@@ -48,6 +48,9 @@ $('#exampleModal').on('show.bs.modal', function (event) {
             modal.find('.modal-body input[name$="categoryId"]').val(metaData.data.categoryId)
 
             var img = "";
+            if (metaData.data == null) {
+                return;
+            }
             metaData.data.thumbnail.forEach(element => {
                 img += ` 
                 <div class="col-4" style="display: inline-block;">
@@ -55,9 +58,9 @@ $('#exampleModal').on('show.bs.modal', function (event) {
                 </div>`;
                 modal.find('.modal-body div[name$="image"]').html(img);
             });
-                modal.find('.modal-footer button[name$="addNews"]').click(function () {
-                    addNews();
-                })
+            modal.find('.modal-footer button[name$="addNews"]').click(function () {
+                addNews();
+            })
         },
         headers: {
             "Authorization": "Bear eefbd5f1811c454abfa0f66e3d5d8e1f",
@@ -94,6 +97,7 @@ function addNews() {
         "updatedAtMLS": updatedAtMLS,
         "status": status
     }
+
     var data = JSON.stringify(article);
     console.log("stringify :" + data);
     $.ajax({
