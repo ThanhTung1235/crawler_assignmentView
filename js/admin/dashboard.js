@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#data-table').hide();
     loadDoc();
     loadCategory();
-    if (localStorage.getItem("token") == null) {
-        window.location.href = "account/login.html";
-    }
+
 });
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
