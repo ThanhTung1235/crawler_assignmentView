@@ -1,10 +1,14 @@
 var url = "https://beta-dot-assignmentcrawler.appspot.com/admin/_api/source";
 
 document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "../account/login.html";
+    }
     $('#loader').show();
     $('#data-table').hide();
     loadDoc();
     loadCategory();
+
 });
 function loadDoc() {
     var xhttp = new XMLHttpRequest();

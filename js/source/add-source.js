@@ -1,12 +1,14 @@
 var url = "https://beta-dot-assignmentcrawler.appspot.com/admin/_api/source";
-
-$().ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "../account/login.html";
+    }
     $('#add-source').validate();
 
+})
 
-});
 $('form[name$="add-source"] input[name$="submit"]').click(function () {
-    if ($("#add-source").valid()){
+    if ($("#add-source").valid()) {
         sendData();
     }
 

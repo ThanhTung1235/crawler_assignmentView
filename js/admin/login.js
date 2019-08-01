@@ -1,7 +1,7 @@
 const url = "https://beta-dot-assignmentcrawler.appspot.com/_api/account/login";
 $('#btn-submit').click(function () {
-    const username = $('form[name$="login-form"]input[name$="username"]').val();
-    const password = $('form[name$="login-form"]input[name$="pass"]').val();
+    const username = $('form[name$="login-form"] input[name$="username"]').val();
+    const password = $('form[name$="login-form"] input[name$="pass"]').val();
     const dataObj = {
         "username": username,
         "password": password

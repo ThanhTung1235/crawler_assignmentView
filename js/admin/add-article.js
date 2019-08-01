@@ -1,9 +1,13 @@
 var url = "https://beta-dot-assignmentcrawler.appspot.com/admin/_api/special-article";
 var urlArticle = "https://beta-dot-assignmentcrawler.appspot.com/admin/_api/article";
-$().ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
     $('#edit-article').validate();
     $('#add-article').validate();
-});
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "account/login.html";
+    }
+})
+
 $('#exampleModal').on('show.bs.modal', function (event) {
     if ($('#add-article').valid()) {
         var button = $(event.relatedTarget)
