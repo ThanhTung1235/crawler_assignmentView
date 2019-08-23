@@ -32,8 +32,9 @@ function loadDoc() {
             })
         }
     };
+    var token = "Bearer " + localStorage.getItem("token");
     xhttp.open("GET", url, true);
-    xhttp.setRequestHeader("Authorization", localStorage.getItem("token"));
+    xhttp.setRequestHeader("Authorization", token);
     xhttp.send();
 }
 function dataTable(data, pageSize, pageNumber) {

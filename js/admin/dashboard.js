@@ -32,8 +32,9 @@ function loadDoc() {
             })
         }
     };
+    var token = "Bearer " + localStorage.getItem("token");
     xhttp.open("GET", url, true);
-    xhttp.setRequestHeader("Authorization", localStorage.getItem("token"));
+    xhttp.setRequestHeader("Authorization", token);
     xhttp.send();
 }
 function dataTable(data, pageSize, pageNumber) {
@@ -96,7 +97,8 @@ function dataTable(data, pageSize, pageNumber) {
 $('#exampleModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var link = button.data('article');
-    var modal = $(this)
+    var modal = $(this);
+    var token = "Bearer " + localStorage.getItem("token");
     modal.find('.modal-title').text('Edit article')
     $.ajax({
         url: url + "?id=" + link,
@@ -136,7 +138,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
             })
         },
         headers: {
-            "Authorization": localStorage.getItem("token"),
+            "Authorization": token,
         },
         error: function () {
             alert("fail")
@@ -157,7 +159,7 @@ function change(linkArticle) {
     var updatedAtMLS = $('.modal-body input[name$="updatedAtMLS"]').val();
     var status = $('.modal-body select[name$="status-opt"]').val();
     var categoryId = $('.modal-body input[name$="categoryId"]').val();
-
+    var token = "Bearer " + localStorage.getItem("token");
     var article = {
         "link": link,
         "categoryId": categoryId,
@@ -188,7 +190,7 @@ function change(linkArticle) {
                 Swal.fire('Update fail!')
         },
         headers: {
-            "Authorization": localStorage.getItem("token"),
+            "Authorization": token,
         },
         "error": function () {
             Swal.fire('Update fail!')
@@ -196,6 +198,7 @@ function change(linkArticle) {
     })
 }
 function deleteArticle(linkArticle) {
+    var token = "Bearer " + localStorage.getItem("token");
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -222,7 +225,7 @@ function deleteArticle(linkArticle) {
                         Swal.fire('Update fail!')
                 },
                 headers: {
-                    "Authorization": localStorage.getItem("token"),
+                    "Authorization": token,
                 },
                 "error": function () {
                     Swal.fire('Update fail!')
@@ -236,6 +239,7 @@ $('#btn_menu').click(x => {
 
 })
 function loadCategory() {
+    var token = "Bearer " + localStorage.getItem("token");
     $.ajax({
         "url": urlCategory,
         "method": "GET",
@@ -249,7 +253,7 @@ function loadCategory() {
             }
         },
         headers: {
-            "Authorization": localStorage.getItem("token"),
+            "Authorization": token,
         },
         "error": function () {
             Swal.fire('Update fail!')
@@ -259,6 +263,7 @@ function loadCategory() {
 $('form[name$="category-sort"] button[name$="submit"]').click(function () {
     var categoryId = $('#category-sopt').val();
     var sort_cate = url + "?ct=" + categoryId;
+    var token = "Bearer " + localStorage.getItem("token");
     if (categoryId == -5) {
         sort_cate = url;
     }
@@ -281,7 +286,7 @@ $('form[name$="category-sort"] button[name$="submit"]').click(function () {
             })
         },
         headers: {
-            "Authorization": localStorage.getItem("token"),
+            "Authorization": token,
         },
         "error": function () {
             Swal.fire('Update fail!')
@@ -290,6 +295,7 @@ $('form[name$="category-sort"] button[name$="submit"]').click(function () {
 })
 $('form[name$="status-sort"] button[name$="submit"]').click(function () {
     var status = $('#status-sopt').val();
+    var token = "Bearer " + localStorage.getItem("token");
     var sort_cate = url + "?status=" + status;
     if (status == -5) {
         sort_cate = url;
@@ -313,7 +319,7 @@ $('form[name$="status-sort"] button[name$="submit"]').click(function () {
             })
         },
         headers: {
-            "Authorization": localStorage.getItem("token"),
+            "Authorization": token,
         },
         "error": function () {
             Swal.fire('Update fail!')

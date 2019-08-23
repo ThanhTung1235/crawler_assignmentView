@@ -22,6 +22,7 @@ function sendData() {
     var content = $('form[name$="add-source"] input[name$="content"]').val();
     var thumbnail = $('form[name$="add-source"] input[name$="thumbnail"]').val();
     var author = $('form[name$="add-source"] input[name$="author"]').val();
+    var token = "Bearer " + localStorage.getItem("token");
     var source = {
         "url": link,
         "linkSelector": link_select,
@@ -48,7 +49,7 @@ function sendData() {
                 Swal.fire('Create fail!')
         },
         headers: {
-            "Authorization": "Bear eefbd5f1811c454abfa0f66e3d5d8e1f",
+            "Authorization": token,
         },
         "error": function () {
             Swal.fire('Update fail!')

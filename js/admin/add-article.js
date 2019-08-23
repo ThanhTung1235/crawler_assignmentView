@@ -20,6 +20,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         var thumbnail = $('form[name$="edit-article"] input[name$="thumbnail"]').val();
         var status = $('form[name$="edit-article"] select[name$="status-opt"]').val();
         var categoryId = $('form[name$="edit-article"] select[name$="categoryId"]').val();
+        var token = "Bearer " + localStorage.getItem("token");
         var data = {
             "url": link,
             "titleSelector": title,
@@ -72,7 +73,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
                 })
             },
             headers: {
-                "Authorization": "Bear eefbd5f1811c454abfa0f66e3d5d8e1f",
+                "Authorization": token,
             },
             error: function () {
                 Swal.fire('Update fail!')
@@ -95,6 +96,7 @@ function addNews() {
         var updatedAtMLS = $('.modal-body input[name$="updatedAtMLS"]').val();
         var status = $('.modal-body select[name$="status-opt"]').val();
         var categoryId = $('.modal-body input[name$="categoryId"]').val();
+        var token = "Bearer " + localStorage.getItem("token");
 
         var article = {
             "link": link,
@@ -128,7 +130,7 @@ function addNews() {
                     Swal.fire('Create fail!')
             },
             headers: {
-                "Authorization": "Bear eefbd5f1811c454abfa0f66e3d5d8e1f",
+                "Authorization": token,
             },
             "error": function () {
                 Swal.fire('Update fail!')
